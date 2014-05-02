@@ -170,16 +170,6 @@ the diff of the current file, and @kbd{M-2} to collapse all files.
 This returns the status buffer to its default setup and is a quick way
 to unclutter it after drilling down into the modified files.
 
-Because @kbd{2} and @kbd{M-2} are so common in the status buffer, they
-are bound to additional, more mnemonic keys: @kbd{M-h} (hide) and
-@kbd{M-H} (hide all).  Likewise @kbd{4} and @kbd{M-4} are also
-available as @kbd{M-s} (show) and @kbd{M-S} (show all).
-
-In other buffers than the status buffer, @kbd{M-h}, @kbd{M-H},
-@kbd{M-s}, and @kbd{M-S} might work on different levels than on 2 and
-4, but they keep their general meaning: @kbd{M-H} hides all detail,
-and @kbd{M-S} shows everything.
-
 @node Status
 @chapter Status
 

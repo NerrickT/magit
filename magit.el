@@ -1525,10 +1525,6 @@ set before loading libary `magit'.")
     (define-key map (kbd "M-2") 'magit-show-level-2-all)
     (define-key map (kbd "M-3") 'magit-show-level-3-all)
     (define-key map (kbd "M-4") 'magit-show-level-4-all)
-    (define-key map (kbd "M-h") 'magit-show-only-files)
-    (define-key map (kbd "M-H") 'magit-show-only-files-all)
-    (define-key map (kbd "M-s") 'magit-show-level-4)
-    (define-key map (kbd "M-S") 'magit-show-level-4-all)
     (define-key map (kbd "g") 'magit-refresh)
     (define-key map (kbd "G") 'magit-refresh-all)
     (define-key map (kbd "?") 'magit-key-mode-popup-dispatch)
@@ -3034,23 +3030,6 @@ on ancestors and descendants of current section."
       (magit-section-show-level magit-root-section 0 level nil)
     (let ((path (reverse (magit-section-lineage (magit-current-section)))))
       (magit-section-show-level (car path) 0 level (cdr path)))))
-
-(defun magit-show-only-files ()
-  "Show section that are files, but not their subsection.
-
-Do this in on ancestors and descendants of current section."
-  (interactive)
-  (if (derived-mode-p 'magit-status-mode)
-      (call-interactively 'magit-show-level-2)
-    (call-interactively 'magit-show-level-1)))
-
-(defun magit-show-only-files-all ()
-  "Show section that are files, but not their subsection.
-Do this for all sections"
-  (interactive)
-  (if (derived-mode-p 'magit-status-mode)
-      (call-interactively 'magit-show-level-2-all)
-    (call-interactively 'magit-show-level-1-all)))
 
 (defmacro magit-define-level-shower-1 (level all)
   "Define an interactive function to show function of level LEVEL.
